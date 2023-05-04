@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Product Registration App</string>
+    <string name="action_settings">Settings</string>
+    <string name="txtNomeProduto">Product name: </string>
+    <string name="txtQuantidade">Quantity: </string>
+    <string name="txtValor">Value: </string>
+    <string name="txtConservacao">Conservation: </string>
+    <string name="txtSem_refrigeracao">No refrigeration</string>
+    <string name="txtResfriado">Cooled</string>
+    <string name="txtCongelado">Frozen </string>
+    <string name="txtSalvar">SAVE</string>
+</resources>
