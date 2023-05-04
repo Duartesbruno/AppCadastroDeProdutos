@@ -13,13 +13,12 @@ public class ProdutoDAO {
     public static void inserir(Context context, Produto produto){
         Conexao conn = new Conexao(context);
         SQLiteDatabase db = conn.getWritableDatabase();
-//        db.execSQL("INSERT INTO produto ( nome, quantidade) VALUES (" +
-//                    " '"+produto.getNome()+"'  ," +
-//                    " '"+produto.getQuantidade()+"' )");
 
         ContentValues valores = new ContentValues();
         valores.put("nome", produto.getNome() );
         valores.put("quantidade", produto.getQuantidade() );
+        valores.put("preco", produto.getPreco().toString() );
+        valores.put("conservacao", produto.getConservacao().toString() );
 
         db.insert("produtos", null, valores);
     }
@@ -31,8 +30,10 @@ public class ProdutoDAO {
         ContentValues valores = new ContentValues();
         valores.put("nome", produto.getNome() );
         valores.put("quantidade", produto.getQuantidade() );
+        valores.put("preco", produto.getPreco().toString() );
+        valores.put("conservacao", produto.getConservacao().toString() );
 
-        db.update("produto", valores ,
+        db.update("produtos", valores ,
                 " id = " + produto.getId(), null  );
     }
 
@@ -48,7 +49,7 @@ public class ProdutoDAO {
         SQLiteDatabase db = conn.getReadableDatabase();
         List<Produto> lista = new ArrayList<>();
 
-        Cursor cursor = db.rawQuery("SELECT id, nome, quantidade FROM produtos ORDER BY nome",
+        Cursor cursor = db.rawQuery("SELECT id, nome, quantidade, preco, conservacao FROM produtos ORDER BY nome",
                 null);
         if( cursor != null && cursor.getCount() > 0 ){
             cursor.moveToFirst();
@@ -57,25 +58,13 @@ public class ProdutoDAO {
                 produto.setId( cursor.getInt( 0 )  );
                 produto.setNome( cursor.getString( 1 )  );
                 produto.setQuantidade( cursor.getString( 2 )  );
+                produto.setPreco( cursor.getString( 3 )  );
+                produto.setConservacao(Conservacao.valueOf(cursor.getString( 4 ))  );
+
                 lista.add( produto );
             }while ( cursor.moveToNext() );
         }
         return lista;
-    }
-
-    public static Produto getProdutoById(Context context, int idProduto){
-        SQLiteDatabase db = new Conexao(context).getReadableDatabase();
-        Produto produto = null;
-        Cursor cursor = db.rawQuery("SELECT id, nome, quantidade FROM produtos " +
-                " WHERE id = " + idProduto, null);
-        if( cursor != null && cursor.getCount() > 0 ){
-            cursor.moveToFirst();
-            produto = new Produto();
-            produto.setId( cursor.getInt( 0 )  );
-            produto.setNome( cursor.getString( 1 )  );
-            produto.setQuantidade( cursor.getString( 2 )  );
-        }
-        return produto;
     }
 
 }

@@ -19,7 +19,9 @@ public class Conexao extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE produtos ( " +
                 " id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT ," +
                 " nome TEXT NOT NULL ," +
-                " quantidade TEXT NOT NULL ) " );
+                " quantidade TEXT NOT NULL," +
+                " preco TEXT NOT NULL, " +
+                " conservacao NOT NULL ) " );
     }
 
     @Override

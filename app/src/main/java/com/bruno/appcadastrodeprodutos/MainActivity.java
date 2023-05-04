@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
         if( listProdutos.isEmpty() ){
             lvProdutos.setEnabled(false);
-            String[] listaVazia = {"Lista Vazia!"};
+            String[] listaVazia = {"0 Items"};
             adapter = new  ArrayAdapter(this, android.R.layout.simple_list_item_1, listaVazia);
         }else {
             lvProdutos.setEnabled(true);

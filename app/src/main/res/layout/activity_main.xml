@@ -15,10 +15,10 @@
 
     <Button
         android:id="@+id/btnAdd"
-        android:layout_width="109dp"
-        android:layout_height="110dp"
+        android:layout_width="99dp"
+        android:layout_height="97dp"
         android:layout_marginBottom="16dp"
-        android:background="@android:drawable/ic_input_add"
+        android:background="@drawable/icon_add"
         android:backgroundTint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

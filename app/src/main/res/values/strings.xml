@@ -3,10 +3,11 @@
     <string name="action_settings">Settings</string>
     <string name="txtNomeProduto">Nome do produto: </string>
     <string name="txtQuantidade">Quantidade: </string>
-    <string name="txtValor">Valor: </string>
+    <string name="txtPreco">Preço: </string>
+    <string name="txtInfoPreco">*Preço por unidade</string>
     <string name="txtConservacao">Conservação: </string>
-    <string name="txtSem_refrigeracao">Sem refrigeração</string>
+    <string name="txtSem_refrigeracao">Sem_Refrigeração</string>
     <string name="txtResfriado">Resfriado</string>
     <string name="txtCongelado">Congelado</string>
-    <string name="txtSalvar">SALVAR</string>
+    <string name="txtCadastrar">Cadastrar</string>
 </resources>

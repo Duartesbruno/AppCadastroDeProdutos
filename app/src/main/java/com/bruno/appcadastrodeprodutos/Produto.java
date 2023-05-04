@@ -1,28 +1,22 @@
 package com.bruno.appcadastrodeprodutos;
 
-import androidx.annotation.NonNull;
 
 public class Produto {
 
     private int id;
-    private String nome, quantidade;
+    private String nome, quantidade, preco;
+    private Conservacao conservacao;
 
     public Produto() {
 
     }
 
 
-    public Produto(int id, String nome, String quantidade) {
-        this.id = id;
+    public Produto(String nome, String quantidade, String preco, Conservacao conservacao) {
         this.nome = nome;
         this.quantidade = quantidade;
-    }
-
-
-    @NonNull
-    @Override
-    public String toString() {
-        return nome + " - Qt: " + quantidade;
+        this.preco = preco;
+        this.conservacao = conservacao;
     }
 
     public int getId() {
@@ -47,6 +41,30 @@ public class Produto {
 
     public void setQuantidade(String quantidade) {
         this.quantidade = quantidade;
+    }
+
+    public String getPreco() {
+        return preco;
+    }
+
+    public void setPreco(String preco) {
+        this.preco = preco;
+    }
+
+    public Conservacao getConservacao() {
+        return conservacao;
+    }
+
+    public void setConservacao(Conservacao conservacao) {
+        this.conservacao = conservacao;
+    }
+
+    @Override
+    public String toString() {
+        return "Item: " + nome + "  ----  " +
+                "Qt: " + quantidade +  "\n" +
+                "P(un): " + preco + "  ----  " +
+                "Conserv: " + conservacao;
     }
 
 }

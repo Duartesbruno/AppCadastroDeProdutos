@@ -8,88 +8,132 @@
 
     <EditText
         android:id="@+id/etNome"
-        android:layout_width="326dp"
+        android:layout_width="325dp"
         android:layout_height="55dp"
-        android:layout_marginTop="116dp"
         android:ems="10"
         android:hint="@string/txtNomeProduto"
         android:inputType="textCapWords"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/etQto"
-        android:layout_width="324dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:hint="@string/txtQuantidade"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etNome" />
-
-    <EditText
-        android:id="@+id/etValor"
-        android:layout_width="327dp"
-        android:layout_height="50dp"
-        android:ems="10"
-        android:inputType="number"
-        tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="274dp" />
-
-    <Button
-        android:id="@+id/btnSalvar"
-        android:layout_width="157dp"
-        android:layout_height="77dp"
-        android:text="@string/txtSalvar"
-        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.389" />
+
+    <EditText
+        android:id="@+id/etQto"
+        android:layout_width="325dp"
+        android:layout_height="55dp"
+        android:ems="10"
+        android:hint="@string/txtQuantidade"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.485" />
+
+    <EditText
+        android:id="@+id/etPreco"
+        android:layout_width="325dp"
+        android:layout_height="55dp"
+        android:ems="10"
+        android:hint="@string/txtPreco"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.599" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="121dp"
+        android:layout_height="16dp"
+        android:gravity="right"
+        android:text="@string/txtInfoPreco"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.848"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.662" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="left"
         android:text="@string/txtConservacao"
         android:textColor="#101010"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.105"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.746" />
 
     <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="343dp"
-        android:layout_height="46dp"
+        android:id="@+id/rgConservacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="370dp">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.825">
 
         <RadioButton
             android:id="@+id/rbSemRefrigercao"
-            android:layout_width="129dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15px"
             android:text="@string/txtSem_refrigeracao" />
 
         <RadioButton
             android:id="@+id/rbCongelado"
-            android:layout_width="111dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15px"
             android:text="@string/txtCongelado" />
 
         <RadioButton
             android:id="@+id/rbResfriado"
-            android:layout_width="104dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15px"
             android:text="@string/txtResfriado" />
 
     </RadioGroup>
+
+    <Button
+        android:id="@+id/btnSalvar"
+        android:layout_width="144dp"
+        android:layout_height="57dp"
+        android:text="@string/txtCadastrar"
+        android:textSize="16sp"
+        app:iconTint="@color/orange_700"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="213dp"
+        android:layout_height="189dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.029"
+        app:srcCompat="@drawable/logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
